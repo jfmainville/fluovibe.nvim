@@ -1,5 +1,5 @@
 return {
-	-- Base colors (from fluorescent)
+	-- Base Colors
 	fg = "#8BA7A7",
 	bg = "#262335",
 	bg_dark = "#241B2F",
