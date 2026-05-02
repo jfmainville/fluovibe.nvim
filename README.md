@@ -17,12 +17,24 @@ A dark Neovim colorscheme with fluorescent accents, built on a deep purple backg
   lazy = false,
   priority = 1000,
   config = function()
+    require("fluovibe").setup({
+      transparency = 10, -- 0 (opaque) to 100 (fully transparent), default: 10
+    })
     vim.cmd.colorscheme("fluovibe")
+    -- setup() stores your opts; colorscheme then calls load() which uses them.
   end,
 }
 ```
 
 Set `lazy = false` and `priority = 1000` so the colorscheme loads before all other plugins.
+
+## Configuration
+
+```lua
+require("fluovibe").setup({
+  transparency = 1, -- integer 0–100, default: 1
+})
+```
 
 ## Plugin Support
 
@@ -58,16 +70,16 @@ require("lualine").setup({
 
 ## Color Palette
 
-| Name       | Hex       |
-|------------|-----------|
-| Background | `#262335` |
+| Name            | Hex       |
+| --------------- | --------- |
+| Background      | `#262335` |
 | Background Dark | `#241B2F` |
-| Foreground | `#8BA7A7` |
-| Cyan       | `#61E2FF` |
-| Green      | `#72F1B8` |
-| Orange     | `#FF8B39` |
-| Pink       | `#FC199A` |
-| Purple     | `#AF6DF9` |
-| Red        | `#FE4450` |
-| Yellow     | `#FFCC00` |
-| Comment    | `#9F9FE3` |
+| Foreground      | `#8BA7A7` |
+| Cyan            | `#61E2FF` |
+| Green           | `#72F1B8` |
+| Orange          | `#FF8B39` |
+| Pink            | `#FC199A` |
+| Purple          | `#AF6DF9` |
+| Red             | `#FE4450` |
+| Yellow          | `#FFCC00` |
+| Comment         | `#9F9FE3` |
