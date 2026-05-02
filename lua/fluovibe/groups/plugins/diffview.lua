@@ -2,7 +2,7 @@ local M = {}
 
 local colors = require("fluovibe.palette")
 
-M.setup = function()
+M.setup = function(_opts)
 	return {
 		DiffviewFilePanelTitle       = { fg = colors.yellow, bold = true },
 		DiffviewFilePanelCounter     = { fg = colors.purple, bold = true },

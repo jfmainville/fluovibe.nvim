@@ -2,9 +2,10 @@ local M = {}
 
 local colors = require("fluovibe.palette")
 
-M.setup = function()
+M.setup = function(opts)
+	local float_bg = opts and opts.transparency > 0 and "NONE" or colors.bg_dark
 	return {
-		AerialNormal    = { fg = colors.fg, bg = colors.bg_dark },
+		AerialNormal    = { fg = colors.fg, bg = float_bg },
 		AerialNormalNC  = { link = "AerialNormal" },
 		AerialLine      = { link = "CursorLine" },
 		AerialLineNC    = { link = "CursorLine" },

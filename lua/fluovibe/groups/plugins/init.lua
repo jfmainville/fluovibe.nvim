@@ -18,10 +18,10 @@ local plugins = {
 	"fluovibe.groups.plugins.treesitter_context",
 }
 
-M.setup = function()
+M.setup = function(opts)
 	local groups = {}
 	for _, plugin in ipairs(plugins) do
-		for group, setting in pairs(require(plugin).setup()) do
+		for group, setting in pairs(require(plugin).setup(opts)) do
 			groups[group] = setting
 		end
 	end

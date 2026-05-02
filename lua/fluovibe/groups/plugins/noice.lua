@@ -2,7 +2,7 @@ local M = {}
 
 local colors = require("fluovibe.palette")
 
-M.setup = function()
+M.setup = function(_opts)
 	return {
 		-- darken(yellow, 50) = "#7f6600"
 		NoiceFormatProgressTodo  = { fg = colors.yellow, bg = "#7f6600" },

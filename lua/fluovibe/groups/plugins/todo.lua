@@ -2,7 +2,7 @@ local M = {}
 
 local colors = require("fluovibe.palette")
 
-M.setup = function()
+M.setup = function(_opts)
 	return {
 		TodoBgTODO   = { fg = colors.bg, bg = colors.yellow, bold = true },
 		TodoFgTODO   = { fg = colors.yellow },

@@ -2,10 +2,11 @@ local M = {}
 
 local colors = require("fluovibe.palette")
 
-M.setup = function()
+M.setup = function(opts)
+	local float_bg = opts and opts.transparency > 0 and "NONE" or colors.bg_dark
 	return {
-		TreesitterContext            = { bg = colors.bg_dark },
-		TreesitterContextLineNumber  = { fg = colors.comment, bg = colors.bg_dark },
+		TreesitterContext            = { bg = float_bg },
+		TreesitterContextLineNumber  = { fg = colors.comment, bg = float_bg },
 		TreesitterContextSeparator   = { fg = colors.separator },
 		TreesitterContextBottom      = { underline = true, sp = colors.separator },
 	}

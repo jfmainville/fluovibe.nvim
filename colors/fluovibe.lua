@@ -1,1 +1,1 @@
-require("fluovibe").setup()
+require("fluovibe").load()

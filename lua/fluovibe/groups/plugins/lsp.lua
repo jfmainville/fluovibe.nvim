@@ -2,7 +2,13 @@ local M = {}
 
 local colors = require("fluovibe.palette")
 
-M.setup = function()
+M.setup = function(opts)
+	local transparent = opts and opts.transparency > 0
+	local vtext_error = transparent and "NONE" or "#462839"
+	local vtext_warn  = transparent and "NONE" or "#473336"
+	local vtext_info  = transparent and "NONE" or "#2f4053"
+	local vtext_hint  = transparent and "NONE" or "#2f4053"
+	local vtext_ok    = transparent and "NONE" or "#314249"
 	return {
 		-- :h lsp-semantic-highlight
 		["@lsp.type.class"]                        = { link = "Type" },
@@ -31,11 +37,11 @@ M.setup = function()
 		DiagnosticInfo               = { fg = colors.diag_info },
 		DiagnosticHint               = { fg = colors.diag_hint },
 		DiagnosticOk                 = { fg = colors.diag_ok },
-		DiagnosticVirtualTextError   = { fg = colors.diag_error, bg = "#462839" },
-		DiagnosticVirtualTextWarn    = { fg = colors.diag_warn,  bg = "#473336" },
-		DiagnosticVirtualTextInfo    = { fg = colors.diag_info,  bg = "#2f4053" },
-		DiagnosticVirtualTextHint    = { fg = colors.diag_hint,  bg = "#2f4053" },
-		DiagnosticVirtualTextOk      = { fg = colors.diag_ok,    bg = "#314249" },
+		DiagnosticVirtualTextError   = { fg = colors.diag_error, bg = vtext_error },
+		DiagnosticVirtualTextWarn    = { fg = colors.diag_warn,  bg = vtext_warn },
+		DiagnosticVirtualTextInfo    = { fg = colors.diag_info,  bg = vtext_info },
+		DiagnosticVirtualTextHint    = { fg = colors.diag_hint,  bg = vtext_hint },
+		DiagnosticVirtualTextOk      = { fg = colors.diag_ok,    bg = vtext_ok },
 		DiagnosticUnderlineError     = { fg = colors.diag_error, underline = true },
 		DiagnosticUnderlineWarn      = { fg = colors.diag_warn,  underline = true },
 		DiagnosticUnderlineInfo      = { fg = colors.diag_info,  underline = true },

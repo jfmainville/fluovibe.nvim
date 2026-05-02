@@ -2,7 +2,7 @@ local M = {}
 
 local colors = require("fluovibe.palette")
 
-M.setup = function()
+M.setup = function(_opts)
 	return {
 		BlinkCmpMenu                       = { link = "NormalFloat" },
 		BlinkCmpMenuBorder                 = { link = "WinSeparator" },

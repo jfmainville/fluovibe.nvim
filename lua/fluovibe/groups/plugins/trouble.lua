@@ -2,9 +2,10 @@ local M = {}
 
 local colors = require("fluovibe.palette")
 
-M.setup = function()
+M.setup = function(opts)
+	local float_bg = opts and opts.transparency > 0 and "NONE" or colors.bg_dark
 	return {
-		TroubleNormal    = { fg = colors.fg, bg = colors.bg_dark },
+		TroubleNormal    = { fg = colors.fg, bg = float_bg },
 		TroubleNormalNC  = { link = "TroubleNormal" },
 		TroubleText      = { fg = colors.fg },
 		TroubleCount     = { fg = colors.pink, bold = true },
