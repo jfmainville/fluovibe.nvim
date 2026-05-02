@@ -3,7 +3,7 @@ local M = {}
 local colors = require("fluovibe.palette")
 
 M.setup = function(opts)
-	local transparent = opts and opts.transparency > 0
+	local transparent = opts and opts.transparent
 	local float_bg    = transparent and "NONE" or colors.bg_dark
 	local title_bg    = transparent and "NONE" or "#503e26"
 	return {

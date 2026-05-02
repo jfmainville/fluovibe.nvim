@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup = function(opts)
-	local transparent = opts and opts.transparency > 0
+	local transparent = opts and opts.transparent
 	local h1_bg   = transparent and "NONE" or "#242739"
 	local h2_bg   = transparent and "NONE" or "#282C28"
 	local h3_bg   = transparent and "NONE" or "#262C2C"

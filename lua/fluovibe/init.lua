@@ -1,10 +1,15 @@
 local M = {}
 
 local defaults = {
-	transparency = 10,
+	transparent = true,
 }
 
 local config = {}
+
+M.setup = function(opts)
+	config = vim.tbl_deep_extend("force", defaults, opts or {})
+	M.load()
+end
 
 M.load = function()
 	local opts = vim.tbl_deep_extend("force", defaults, config)

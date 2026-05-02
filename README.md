@@ -18,10 +18,9 @@ A dark Neovim colorscheme with fluorescent accents, built on a deep purple backg
   priority = 1000,
   config = function()
     require("fluovibe").setup({
-      transparency = 10, -- 0 (opaque) to 100 (fully transparent), default: 10
+      transparent = true, -- default: true
     })
     vim.cmd.colorscheme("fluovibe")
-    -- setup() stores your opts; colorscheme then calls load() which uses them.
   end,
 }
 ```
@@ -32,7 +31,7 @@ Set `lazy = false` and `priority = 1000` so the colorscheme loads before all oth
 
 ```lua
 require("fluovibe").setup({
-  transparency = 1, -- integer 0–100, default: 1
+  transparent = true, -- boolean, default: true
 })
 ```
 

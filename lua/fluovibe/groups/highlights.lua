@@ -3,7 +3,7 @@ local M = {}
 local colors = require("fluovibe.palette")
 
 M.setup = function(opts)
-	local transparent = opts.transparency > 0
+	local transparent = opts.transparent
 	local normal_bg = transparent and "NONE" or colors.bg
 	local float_bg = transparent and "NONE" or colors.bg_dark
 	local gutter_bg = transparent and "NONE" or colors.bg

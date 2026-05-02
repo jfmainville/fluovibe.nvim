@@ -3,7 +3,7 @@ local M = {}
 local colors = require("fluovibe.palette")
 
 M.setup = function(opts)
-	local transparent = opts and opts.transparency > 0
+	local transparent = opts and opts.transparent
 	local vtext_error = transparent and "NONE" or "#462839"
 	local vtext_warn  = transparent and "NONE" or "#473336"
 	local vtext_info  = transparent and "NONE" or "#2f4053"
