@@ -1,6 +1,6 @@
 # fluovibe.nvim
 
-A dark Neovim colorscheme with fluorescent accents, built on a deep purple background.
+A dark Neovim colorscheme with fluorescent accents, built on a near-black navy background. Colors follow the [Cyberpunk Neon](https://github.com/Roboron3042/Cyberpunk-Neon) palette by Roboron3042.
 
 ## Requirements
 
@@ -71,14 +71,14 @@ require("lualine").setup({
 
 | Name            | Hex       |
 | --------------- | --------- |
-| Background      | `#262335` |
-| Background Dark | `#241B2F` |
-| Foreground      | `#8BA7A7` |
-| Cyan            | `#61E2FF` |
-| Green           | `#72F1B8` |
-| Orange          | `#FF8B39` |
-| Pink            | `#FC199A` |
-| Purple          | `#AF6DF9` |
-| Red             | `#FE4450` |
-| Yellow          | `#FFCC00` |
-| Comment         | `#9F9FE3` |
+| Background      | `#000B1E` |
+| Background Dark | `#091833` |
+| Foreground      | `#06EDF9` |
+| Cyan            | `#06EDF9` |
+| Green           | `#00FF00` |
+| Orange          | `#F57800` |
+| Pink            | `#EA00D9` |
+| Purple          | `#B200F5` |
+| Red             | `#FF0000` |
+| Yellow          | `#FFFF00` |
+| Comment         | `#057583` |

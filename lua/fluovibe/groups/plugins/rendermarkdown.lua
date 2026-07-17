@@ -7,7 +7,7 @@ M.setup = function(opts)
 	local h3_bg   = transparent and "NONE" or "#262C2C"
 	local h4_bg   = transparent and "NONE" or "#1C2930"
 	local h5_bg   = transparent and "NONE" or "#292739"
-	local h6_bg   = transparent and "NONE" or "#262335"
+	local h6_bg   = transparent and "NONE" or "#091833"
 	local code_bg = transparent and "NONE" or "#191A24"
 	return {
 		RenderMarkdownH1Bg     = { fg = "#86A2E8", bg = h1_bg },

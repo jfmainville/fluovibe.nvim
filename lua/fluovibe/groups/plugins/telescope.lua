@@ -5,7 +5,7 @@ local colors = require("fluovibe.palette")
 M.setup = function(opts)
 	local transparent = opts and opts.transparent
 	local float_bg    = transparent and "NONE" or colors.bg_dark
-	local title_bg    = transparent and "NONE" or "#503e26"
+	local title_bg    = transparent and "NONE" or "#3a4628"
 	return {
 		TelescopeSelection      = { link = "CursorLine" },
 		TelescopeSelectionCaret = { fg = colors.pink },
@@ -22,7 +22,6 @@ M.setup = function(opts)
 		TelescopeResultsBorder  = { link = "TelescopeBorder" },
 		TelescopePreviewBorder  = { link = "TelescopeBorder" },
 
-		-- blend(yellow, bg_dark, 0.2) = "#503e26"
 		TelescopeTitle          = { fg = colors.yellow, bg = title_bg },
 		TelescopePromptTitle    = { link = "TelescopeTitle" },
 		TelescopeResultsTitle   = { link = "TelescopeTitle" },

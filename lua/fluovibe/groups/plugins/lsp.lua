@@ -4,11 +4,11 @@ local colors = require("fluovibe.palette")
 
 M.setup = function(opts)
 	local transparent = opts and opts.transparent
-	local vtext_error = transparent and "NONE" or "#462839"
-	local vtext_warn  = transparent and "NONE" or "#473336"
-	local vtext_info  = transparent and "NONE" or "#2f4053"
-	local vtext_hint  = transparent and "NONE" or "#2f4053"
-	local vtext_ok    = transparent and "NONE" or "#314249"
+	local vtext_error = transparent and "NONE" or "#3a1328"
+	local vtext_warn  = transparent and "NONE" or "#3a4628"
+	local vtext_info  = transparent and "NONE" or "#082a43"
+	local vtext_hint  = transparent and "NONE" or "#08425a"
+	local vtext_ok    = transparent and "NONE" or "#074628"
 	return {
 		-- :h lsp-semantic-highlight
 		["@lsp.type.class"]                        = { link = "Type" },
@@ -52,7 +52,7 @@ M.setup = function(opts)
 		LspReferenceText             = { link = "Visual" },
 		LspReferenceRead             = { link = "Visual" },
 		LspReferenceWrite            = { link = "Visual" },
-		LspInlayHint                 = { fg = "#7f6600" },
+		LspInlayHint                 = { fg = "#7f7f00" },
 	}
 end
 

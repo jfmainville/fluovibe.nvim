@@ -4,8 +4,7 @@ local colors = require("fluovibe.palette")
 
 M.setup = function(_opts)
 	return {
-		-- darken(yellow, 50) = "#7f6600"
-		NoiceFormatProgressTodo  = { fg = colors.yellow, bg = "#7f6600" },
+		NoiceFormatProgressTodo  = { fg = colors.yellow, bg = "#7f7f00" },
 		NoiceFormatProgressDone  = { fg = colors.yellow, reverse = true },
 		NoiceLspProgressSpinner  = { fg = colors.purple },
 		NoiceLspProgressClient   = { fg = colors.purple },
