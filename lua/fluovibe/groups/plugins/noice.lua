@@ -9,6 +9,7 @@ M.setup = function(_opts)
 		NoiceLspProgressSpinner  = { fg = colors.purple },
 		NoiceLspProgressClient   = { fg = colors.purple },
 		NoiceLspProgressTitle    = { link = "Title" },
+		NoiceCmdlinePopupBorder  = { link = "FloatBorder" },
 	}
 end
 

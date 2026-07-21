@@ -18,7 +18,7 @@ return {
 	cursor_bg = "#FF1AEE",
 	cursorline = "#321959",
 	selection = "#711C91",
-	separator = "#012F3F",
+	separator = "#00AAE6",
 
 	-- Diagnostics
 	diag_error = "#FF0000",
