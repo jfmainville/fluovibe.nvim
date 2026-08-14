@@ -1,9 +1,9 @@
 return {
 	-- Base Colors
-	fg = "#06EDF9",
+	fg = "#CBE4FF",
 	bg = "#000B1E",
 	bg_dark = "#091833",
-	cyan = "#06EDF9",
+	cyan = "#5FD4E0",
 	white = "#D7D7D5",
 	green = "#00FF00",
 	orange = "#F57800",
@@ -24,7 +24,7 @@ return {
 	diag_error = "#FF0000",
 	diag_warn = "#FFFF00",
 	diag_info = "#057583",
-	diag_hint = "#06EDF9",
+	diag_hint = "#5FD4E0",
 	diag_ok = "#00FF00",
 
 	-- Git
