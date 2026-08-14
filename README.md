@@ -54,6 +54,12 @@ fluovibe.nvim ships with highlight groups for the following plugins:
 - [aerial.nvim](https://github.com/stevearc/aerial.nvim)
 - [diffview.nvim](https://github.com/sindrets/diffview.nvim)
 - [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
+- [oil.nvim](https://github.com/stevearc/oil.nvim)
+- [codediff.nvim](https://github.com/esmuellert/codediff.nvim)
+- [atlas.nvim](https://github.com/emrearmagan/atlas.nvim)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [undotree](https://github.com/mbbill/undotree)
+- [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 ## lualine Theme
 
@@ -77,8 +83,14 @@ require("lualine").setup({
 | Cyan            | `#06EDF9` |
 | Green           | `#00FF00` |
 | Orange          | `#F57800` |
-| Pink            | `#EA00D9` |
+| Pink            | `#FF1AEE` |
 | Purple          | `#B200F5` |
 | Red             | `#FF0000` |
 | Yellow          | `#FFFF00` |
 | Comment         | `#057583` |
+
+## Notes
+
+`atlas.nvim` re-applies its own hardcoded highlights every time one of its views
+is opened, so fluovibe registers an autocommand that claims those groups back
+once the plugin has finished drawing. Nothing extra is needed on your side.

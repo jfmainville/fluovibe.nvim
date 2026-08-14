@@ -20,10 +20,13 @@ M.setup = function(opts)
 		CursorLine = { bg = colors.cursorline },
 		CursorLineNr = { fg = colors.pink, bg = gutter_bg },
 		Directory = { fg = colors.green, bold = true },
-		DiffAdd = { fg = colors.git_add },
-		DiffChange = { fg = colors.git_change },
-		DiffDelete = { fg = colors.bg, bg = colors.git_delete },
-		DiffText = { fg = colors.cyan, reverse = true },
+		-- Diff lines carry a background so `:h diff-mode` stays readable and so
+		-- plugins that derive their own colors from these groups (codediff.nvim)
+		-- pick up the fluovibe tints instead of falling back to their defaults.
+		DiffAdd = { bg = colors.diff_add },
+		DiffChange = { bg = colors.diff_change },
+		DiffDelete = { fg = colors.git_delete, bg = colors.diff_delete },
+		DiffText = { bg = colors.diff_text, bold = true },
 		EndOfBuffer = { fg = colors.bg },
 		TermCursor = { link = "Cursor" },
 		TermCursorNC = { link = "Cursor" },
@@ -112,6 +115,9 @@ M.setup = function(opts)
 		Delimiter = { fg = colors.pink },
 		SpecialComment = { link = "Keyword" },
 		Debug = { link = "Keyword" },
+		Added = { fg = colors.git_add },
+		Changed = { fg = colors.git_change },
+		Removed = { fg = colors.git_delete },
 		Underlined = { fg = colors.cyan, underline = true },
 		Ignore = {},
 		Error = { fg = colors.diag_error },

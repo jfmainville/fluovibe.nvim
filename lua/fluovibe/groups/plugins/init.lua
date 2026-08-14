@@ -16,6 +16,12 @@ local plugins = {
 	"fluovibe.groups.plugins.aerial",
 	"fluovibe.groups.plugins.diffview",
 	"fluovibe.groups.plugins.treesitter_context",
+	"fluovibe.groups.plugins.oil",
+	"fluovibe.groups.plugins.codediff",
+	"fluovibe.groups.plugins.atlas",
+	"fluovibe.groups.plugins.fugitive",
+	"fluovibe.groups.plugins.undotree",
+	"fluovibe.groups.plugins.mason",
 }
 
 M.setup = function(opts)
