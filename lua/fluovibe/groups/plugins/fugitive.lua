@@ -22,10 +22,9 @@ M.setup = function(_opts)
 		fugitiveUntrackedHeading  = { fg = colors.comment, bold = true },
 		fugitiveUntrackedModifier = { fg = colors.comment },
 
-		-- Diff hunks rendered inside :Git and :Git log -p buffers
-		diffAdded                 = { fg = colors.git_add },
-		diffRemoved               = { fg = colors.git_delete },
-		diffChanged               = { fg = colors.git_change },
+		diffAdded                 = { fg = colors.git_add, bg = colors.diff_add },
+		diffRemoved               = { fg = colors.git_delete, bg = colors.diff_delete },
+		diffChanged               = { fg = colors.git_change, bg = colors.diff_change },
 		diffFile                  = { fg = colors.cyan, bold = true },
 		diffNewFile               = { fg = colors.git_add },
 		diffOldFile               = { fg = colors.git_delete },

@@ -32,8 +32,7 @@ return {
 	git_change = "#F57800",
 	git_delete = "#FF0000",
 
-	-- Diff line backgrounds
-	diff_add = "#04331A",
+	diff_add = "#0C4A20",
 	diff_change = "#2E1D00",
 	diff_delete = "#330711",
 	diff_text = "#5C3A00",
