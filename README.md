@@ -1,6 +1,6 @@
 # fluovibe.nvim
 
-A dark Neovim colorscheme with fluorescent accents, built on a near-black navy background. Colors follow the [Cyberpunk Neon](https://github.com/Roboron3042/Cyberpunk-Neon) palette by Roboron3042.
+A dark Neovim colorscheme with fluorescent accents, built on a near-black navy background. The overall vibe is cyberpunk.
 
 ## Requirements
 
@@ -79,8 +79,8 @@ require("lualine").setup({
 | --------------- | --------- |
 | Background      | `#000B1E` |
 | Background Dark | `#091833` |
-| Foreground      | `#06EDF9` |
-| Cyan            | `#06EDF9` |
+| Foreground      | `#CBE4FF` |
+| Cyan            | `#5FD4E0` |
 | Green           | `#00FF00` |
 | Orange          | `#F57800` |
 | Pink            | `#FF1AEE` |
@@ -89,8 +89,4 @@ require("lualine").setup({
 | Yellow          | `#FFFF00` |
 | Comment         | `#057583` |
 
-## Notes
-
-`atlas.nvim` re-applies its own hardcoded highlights every time one of its views
-is opened, so fluovibe registers an autocommand that claims those groups back
-once the plugin has finished drawing. Nothing extra is needed on your side.
+---
