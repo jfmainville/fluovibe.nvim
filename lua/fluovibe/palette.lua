@@ -28,12 +28,12 @@ return {
 	diag_ok = "#00FF00",
 
 	-- Git
-	git_add = "#00FF00",
+	git_add = "#3FB950",
 	git_change = "#F57800",
-	git_delete = "#FF0000",
+	git_delete = "#F85149",
 
-	diff_add = "#0C4A20",
+	diff_add = "#152606",
 	diff_change = "#2E1D00",
-	diff_delete = "#330711",
+	diff_delete = "#300B03",
 	diff_text = "#5C3A00",
 }
