@@ -35,5 +35,6 @@ return {
 	diff_add = "#152606",
 	diff_change = "#2E1D00",
 	diff_delete = "#300B03",
-	diff_text = "#5C3A00",
+	diff_text = "#80271F",
+	diff_text_add = "#256023",
 }

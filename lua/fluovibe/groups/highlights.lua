@@ -23,10 +23,14 @@ M.setup = function(opts)
 		-- Diff lines carry a background so `:h diff-mode` stays readable and so
 		-- plugins that derive their own colors from these groups (codediff.nvim)
 		-- pick up the fluovibe tints instead of falling back to their defaults.
+		-- DiffText/DiffTextAdd mark the exact changed span within a changed line
+		-- (`diffopt+=linematch`), in a brighter red/green so word-level edits read
+		-- like GitHub's line-diff view instead of a flat DiffChange background.
 		DiffAdd = { bg = colors.diff_add },
 		DiffChange = { bg = colors.diff_change },
 		DiffDelete = { fg = colors.git_delete, bg = colors.diff_delete },
 		DiffText = { bg = colors.diff_text, bold = true },
+		DiffTextAdd = { bg = colors.diff_text_add, bold = true },
 		EndOfBuffer = { fg = colors.bg },
 		TermCursor = { link = "Cursor" },
 		TermCursorNC = { link = "Cursor" },
