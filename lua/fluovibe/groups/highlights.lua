@@ -39,7 +39,7 @@ M.setup = function(opts)
 		Folded = { fg = colors.comment, bg = colors.selection },
 		FoldColumn = { fg = colors.fg, bg = gutter_bg },
 		SignColumn = { bg = gutter_bg },
-		IncSearch = { fg = colors.white, bg = colors.pink, bold = true },
+		IncSearch = { fg = colors.bg, bg = colors.pink, bold = true },
 		Substitute = { link = "IncSearch" },
 		LineNr = { fg = colors.comment, bg = gutter_bg },
 		LineNrAbove = { link = "LineNr" },

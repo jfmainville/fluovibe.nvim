@@ -79,12 +79,12 @@ require("lualine").setup({
 | --------------- | --------- |
 | Background      | `#000B1E` |
 | Background Dark | `#091833` |
-| Foreground      | `#CBE4FF` |
-| Cyan            | `#5FD4E0` |
+| Foreground      | `#00E5FF` |
+| Cyan            | `#00FFC8` |
 | Green           | `#00FF00` |
 | Orange          | `#F57800` |
 | Pink            | `#FF1AEE` |
-| Purple          | `#B200F5` |
+| Purple          | `#D052FF` |
 | Red             | `#FF0000` |
 | Yellow          | `#FFFF00` |
 | Comment         | `#057583` |

@@ -3,7 +3,7 @@ local colors = require("fluovibe.palette")
 return {
 	normal = {
 		a = { bg = colors.bg, fg = colors.purple, gui = "bold" },
-		b = { bg = "#59007a", fg = colors.purple },
+		b = { bg = "#48236C", fg = colors.purple },
 		c = { bg = colors.bg_dark, fg = colors.fg },
 	},
 	insert = {
@@ -13,7 +13,7 @@ return {
 	},
 	visual = {
 		a = { bg = colors.bg, fg = colors.cyan, gui = "bold" },
-		b = { bg = "#03767c", fg = colors.cyan },
+		b = { bg = "#00576C", fg = colors.cyan },
 		c = { bg = colors.bg_dark, fg = colors.fg },
 	},
 	replace = {

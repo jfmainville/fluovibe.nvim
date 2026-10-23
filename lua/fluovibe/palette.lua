@@ -1,14 +1,13 @@
 return {
 	-- Base Colors
-	fg = "#CBE4FF",
+	fg = "#00E5FF",
 	bg = "#000B1E",
 	bg_dark = "#091833",
-	cyan = "#5FD4E0",
-	white = "#D7D7D5",
+	cyan = "#00FFC8",
 	green = "#00FF00",
 	orange = "#F57800",
 	pink = "#FF1AEE",
-	purple = "#B200F5",
+	purple = "#D052FF",
 	red = "#FF0000",
 	yellow = "#FFFF00",
 	comment = "#057583",
@@ -16,15 +15,15 @@ return {
 	-- Editor UI
 	cursor_fg = "#000B1E",
 	cursor_bg = "#FF1AEE",
-	cursorline = "#321959",
-	selection = "#711C91",
+	cursorline = "#0B2956",
+	selection = "#133E7C",
 	separator = "#00AAE6",
 
 	-- Diagnostics
 	diag_error = "#FF0000",
 	diag_warn = "#FFFF00",
 	diag_info = "#057583",
-	diag_hint = "#5FD4E0",
+	diag_hint = "#00FFC8",
 	diag_ok = "#00FF00",
 
 	-- Git

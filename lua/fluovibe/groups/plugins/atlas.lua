@@ -15,7 +15,7 @@ local dynamic = {
 	colors.purple,
 	"#FF0055",
 	"#7DF9FF",
-	colors.white,
+	"#2E5BFF",
 }
 
 local function build(opts)
