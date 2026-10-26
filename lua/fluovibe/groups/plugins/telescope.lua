@@ -5,7 +5,7 @@ local colors = require("fluovibe.palette")
 M.setup = function(opts)
 	local transparent = opts and opts.transparent
 	local float_bg    = transparent and "NONE" or colors.bg_dark
-	local title_bg    = transparent and "NONE" or "#3a4628"
+	local title_bg    = transparent and "NONE" or "#383C18"
 	return {
 		TelescopeSelection      = { link = "CursorLine" },
 		TelescopeSelectionCaret = { fg = colors.pink },

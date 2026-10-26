@@ -4,11 +4,11 @@ local colors = require("fluovibe.palette")
 
 M.setup = function(opts)
 	local transparent = opts and opts.transparent
-	local vtext_error = transparent and "NONE" or "#3a1328"
-	local vtext_warn  = transparent and "NONE" or "#3a4628"
-	local vtext_info  = transparent and "NONE" or "#082a43"
-	local vtext_hint  = transparent and "NONE" or "#08425a"
-	local vtext_ok    = transparent and "NONE" or "#074628"
+	local vtext_error = transparent and "NONE" or "#2D1028"
+	local vtext_warn  = transparent and "NONE" or "#2C301A"
+	local vtext_info  = transparent and "NONE" or "#0B2340"
+	local vtext_hint  = transparent and "NONE" or "#073037"
+	local vtext_ok    = transparent and "NONE" or "#0F301C"
 	return {
 		-- :h lsp-semantic-highlight
 		["@lsp.type.class"]                        = { link = "Type" },
@@ -17,9 +17,9 @@ M.setup = function(opts)
 		["@lsp.type.enumMember"]                   = { link = "Constant" },
 		["@lsp.type.interface"]                    = { link = "Type" },
 		["@lsp.type.macro"]                        = { link = "Keyword" },
-		["@lsp.type.namespace"]                    = { fg = colors.cyan },
-		["@lsp.type.parameter"]                    = { fg = colors.orange },
-		["@lsp.type.property"]                     = { fg = colors.cyan },
+		["@lsp.type.namespace"]                    = { fg = colors.blue },
+		["@lsp.type.parameter"]                    = { fg = colors.orange, italic = true },
+		["@lsp.type.property"]                     = { fg = colors.blue },
 		["@lsp.type.struct"]                       = { link = "Type" },
 		["@lsp.type.type"]                         = { link = "Type" },
 		["@lsp.type.typeParameter"]                = { link = "Type" },
@@ -52,7 +52,7 @@ M.setup = function(opts)
 		LspReferenceText             = { link = "Visual" },
 		LspReferenceRead             = { link = "Visual" },
 		LspReferenceWrite            = { link = "Visual" },
-		LspInlayHint                 = { fg = "#7f7f00" },
+		LspInlayHint                 = { fg = "#66409A", italic = true },
 	}
 end
 

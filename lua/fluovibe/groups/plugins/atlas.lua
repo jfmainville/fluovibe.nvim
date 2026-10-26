@@ -6,14 +6,14 @@ local colors = require("fluovibe.palette")
 -- into an eleven slot palette, so every slot has to stay visually distinct.
 local dynamic = {
 	colors.cyan,
-	colors.separator,
+	colors.blue,
 	colors.green,
-	"#00FFA3",
+	"#C6FF00",
 	colors.yellow,
 	colors.orange,
 	colors.pink,
 	colors.purple,
-	"#FF0055",
+	colors.red,
 	"#7DF9FF",
 	"#2E5BFF",
 }
@@ -76,8 +76,8 @@ local function build(opts)
 		-- Provider headers
 		AtlasGitHubTheme            = { fg = colors.bg, bg = colors.cyan, bold = true },
 		AtlasGitLabTheme            = { fg = colors.bg, bg = colors.orange, bold = true },
-		AtlasBitbucketTheme         = { fg = colors.bg, bg = colors.separator, bold = true },
-		AtlasJiraTheme              = { fg = colors.bg, bg = colors.separator, bold = true },
+		AtlasBitbucketTheme         = { fg = colors.bg, bg = colors.blue, bold = true },
+		AtlasJiraTheme              = { fg = colors.bg, bg = colors.blue, bold = true },
 		AtlasGHIssuesTheme          = { link = "AtlasGitHubTheme" },
 		AtlasGLIssuesTheme          = { link = "AtlasGitLabTheme" },
 
@@ -95,7 +95,7 @@ local function build(opts)
 		AtlasGLPRRef                = { fg = colors.orange, bold = true },
 
 		-- Bitbucket pull requests
-		AtlasBitbucketPROpen        = { fg = colors.bg, bg = colors.separator, bold = true },
+		AtlasBitbucketPROpen        = { fg = colors.bg, bg = colors.blue, bold = true },
 		AtlasBitbucketPRMerged      = { fg = colors.bg, bg = colors.green, bold = true },
 		AtlasBitbucketPRDeclined    = { fg = colors.bg, bg = colors.red, bold = true },
 		AtlasBitbucketPRDraft       = { fg = colors.bg, bg = colors.yellow, bold = true },
@@ -116,12 +116,12 @@ local function build(opts)
 		AtlasGLIssueKey             = { fg = colors.orange, bold = true },
 
 		-- Jira issues
-		AtlasJiraKey                = { fg = colors.separator, bold = true },
+		AtlasJiraKey                = { fg = colors.blue, bold = true },
 		AtlasJiraTitle              = { fg = colors.pink, bold = true },
 		AtlasJiraEpic               = { fg = colors.purple, bold = true },
 		AtlasJiraChipStoryPoints    = { fg = colors.bg, bg = colors.pink, bold = true },
 		AtlasJiraChipDueDate        = { fg = colors.bg, bg = colors.yellow, bold = true },
-		AtlasJiraChipParent         = { fg = colors.bg, bg = colors.separator, bold = true },
+		AtlasJiraChipParent         = { fg = colors.bg, bg = colors.blue, bold = true },
 		AtlasProjectKey             = { fg = colors.purple, bold = true },
 	}
 

@@ -77,16 +77,17 @@ require("lualine").setup({
 
 | Name            | Hex       |
 | --------------- | --------- |
-| Background      | `#000B1E` |
-| Background Dark | `#091833` |
-| Foreground      | `#00E5FF` |
-| Cyan            | `#00FFC8` |
-| Green           | `#00FF00` |
-| Orange          | `#F57800` |
-| Pink            | `#FF1AEE` |
-| Purple          | `#D052FF` |
-| Red             | `#FF0000` |
-| Yellow          | `#FFFF00` |
-| Comment         | `#057583` |
+| Background      | `#080B1E` |
+| Background Dark | `#0E1330` |
+| Foreground      | `#5CE1FF` |
+| Blue            | `#1FA8FF` |
+| Cyan            | `#00FFC2` |
+| Green           | `#39FF14` |
+| Orange          | `#FF8C1A` |
+| Pink            | `#FF2CDF` |
+| Purple          | `#B26BFF` |
+| Red             | `#FF2E63` |
+| Yellow          | `#FAFF00` |
+| Comment         | `#5B6B9E` |
 
 ---

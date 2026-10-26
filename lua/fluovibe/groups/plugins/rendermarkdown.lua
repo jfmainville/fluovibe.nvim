@@ -4,13 +4,13 @@ local colors = require("fluovibe.palette")
 
 M.setup = function(opts)
 	local transparent = opts and opts.transparent
-	local h1_bg   = transparent and "NONE" or "#260D3D"
-	local h2_bg   = transparent and "NONE" or "#002B3F"
-	local h3_bg   = transparent and "NONE" or "#262F19"
-	local h4_bg   = transparent and "NONE" or "#002F19"
-	local h5_bg   = transparent and "NONE" or "#241B19"
-	local h6_bg   = transparent and "NONE" or "#1F153F"
-	local code_bg = transparent and "NONE" or "#091833"
+	local h1_bg   = transparent and "NONE" or "#2B1039"
+	local h2_bg   = transparent and "NONE" or "#14293E"
+	local h3_bg   = transparent and "NONE" or "#2A2D1A"
+	local h4_bg   = transparent and "NONE" or "#0F2D1D"
+	local h5_bg   = transparent and "NONE" or "#2B1D1D"
+	local h6_bg   = transparent and "NONE" or "#20183E"
+	local code_bg = transparent and "NONE" or colors.bg_dark
 	return {
 		RenderMarkdownH1Bg     = { fg = colors.pink, bg = h1_bg },
 		RenderMarkdownH2Bg     = { fg = colors.fg, bg = h2_bg },
