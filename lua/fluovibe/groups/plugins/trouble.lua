@@ -13,7 +13,7 @@ M.setup = function(opts)
 		TroublePos       = { fg = colors.comment },
 		TroubleSource    = { fg = colors.comment },
 		TroubleCode      = { fg = colors.comment },
-		TroubleDirectory = { fg = colors.yellow },
+		TroubleDirectory = { link = "Directory" },
 		TroubleFileName  = { fg = colors.fg },
 		TroubleIconError   = { fg = colors.diag_error },
 		TroubleIconWarning = { fg = colors.diag_warn },

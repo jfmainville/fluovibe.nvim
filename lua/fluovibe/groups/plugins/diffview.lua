@@ -10,7 +10,7 @@ M.setup = function(_opts)
 		DiffviewFilePanelInsertions  = { fg = colors.git_add },
 		DiffviewFilePanelDeletions   = { fg = colors.git_delete },
 		DiffviewFilePanelConflicts   = { fg = colors.git_change },
-		DiffviewFolderName           = { fg = colors.yellow },
+		DiffviewFolderName           = { link = "Directory" },
 		DiffviewFolderSign           = { fg = colors.comment },
 		DiffviewStatusAdded          = { fg = colors.git_add },
 		DiffviewStatusCopied         = { fg = colors.cyan },

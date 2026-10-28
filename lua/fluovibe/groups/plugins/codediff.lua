@@ -9,7 +9,7 @@ M.setup = function(opts)
 	local float_bg = opts and opts.transparent and "NONE" or colors.bg_dark
 	return {
 		CodeDiffFiller                 = { fg = colors.comment },
-		CodeDiffMoveFrom               = { fg = colors.separator },
+		CodeDiffMoveFrom               = { fg = colors.blue },
 		CodeDiffMoveTo                 = { fg = colors.cyan },
 
 		CodeDiffStatusAdded            = { fg = colors.git_add },

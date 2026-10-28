@@ -19,7 +19,7 @@ M.setup = function(_opts)
 		BlinkCmpKindMethod                 = { link = "Function" },
 		BlinkCmpKindFunction               = { link = "Function" },
 		BlinkCmpKindConstructor            = { link = "Function" },
-		BlinkCmpKindField                  = { fg = colors.cyan },
+		BlinkCmpKindField                  = { fg = colors.blue },
 		BlinkCmpKindVariable               = { link = "Identifier" },
 		BlinkCmpKindClass                  = { link = "Type" },
 		BlinkCmpKindInterface              = { link = "Type" },

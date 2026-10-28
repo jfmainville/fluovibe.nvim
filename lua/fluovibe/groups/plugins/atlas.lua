@@ -18,42 +18,47 @@ local dynamic = {
 	"#2E5BFF",
 }
 
-local function build(opts)
+-- atlas.nvim registers its own defaults with `default = true` (and again on
+-- every ColorScheme event), so the groups below win as long as their names
+-- match the ones in atlas/ui/highlights.lua and atlas/formats/markdown/highlights.lua.
+M.setup = function(opts)
 	local float_bg = opts and opts.transparent and "NONE" or colors.bg_dark
 
 	local groups = {
-		-- Panels and chrome
-		AtlasBorder                 = { link = "WinSeparator" },
+		-- Shared UI
+		AtlasCodeBackground         = { bg = colors.bg_dark },
 		AtlasTabInactive            = { fg = colors.comment, bg = colors.bg_dark },
-		AtlasPanelHeaderBg          = { bg = colors.bg_dark },
 		AtlasColumnHeader           = { fg = colors.purple, bold = true },
 		AtlasSectionHeader          = { fg = colors.purple, bold = true, underline = true },
-		AtlasChipActive             = { fg = colors.bg, bg = colors.cyan, bold = true },
-
-		-- Body text
-		AtlasText                   = { fg = colors.fg },
+		AtlasBorder                 = { link = "FloatBorder" },
 		AtlasTextMuted              = { fg = colors.comment },
-		AtlasTextMutedItalic        = { fg = colors.comment, italic = true },
 		AtlasTextMutedStrikethrough = { fg = colors.comment, strikethrough = true },
 		AtlasTextPositive           = { fg = colors.green, bold = true },
 		AtlasTextNote               = { fg = colors.pink, bold = true },
 		AtlasTextWarning            = { fg = colors.yellow, bold = true },
 
-		-- Logs
-		AtlasLogInfo                = { fg = colors.cyan, bold = true },
-		AtlasLogWarn                = { fg = colors.yellow, bold = true },
-		AtlasLogError               = { fg = colors.red, bold = true },
+		-- Provider themes
+		AtlasGitHubTheme            = { fg = colors.bg, bg = colors.cyan, bold = true },
+		AtlasGitLabTheme            = { fg = colors.bg, bg = colors.orange, bold = true },
+		AtlasBitbucketTheme         = { fg = colors.bg, bg = colors.blue, bold = true },
+		AtlasJiraTheme              = { fg = colors.bg, bg = colors.blue, bold = true },
 
-		-- Footer bar
-		AtlasFooterBackground       = { bg = float_bg },
-		AtlasFooterText             = { fg = colors.comment, bg = float_bg },
-		AtlasFooterInfo             = { fg = colors.cyan, bg = float_bg, bold = true },
-		AtlasFooterNote             = { fg = colors.pink, bg = float_bg, bold = true },
-		AtlasFooterWarning          = { fg = colors.yellow, bg = float_bg, bold = true },
-		AtlasFooterError            = { fg = colors.red, bg = float_bg, bold = true },
-		AtlasFooterSuccess          = { fg = colors.green, bg = float_bg, bold = true },
+		-- Chips
+		AtlasChipActive             = { fg = colors.bg, bg = colors.pink, bold = true },
+		AtlasRelatedChip            = { fg = colors.fg, bg = colors.selection, bold = true },
 
-		-- Pull request states
+		-- Issues and Jira fields
+		AtlasIssueOpen              = { fg = colors.green, bold = true },
+		AtlasIssueClosed            = { fg = colors.purple, bold = true },
+		AtlasIssueOpenChip          = { fg = colors.bg, bg = colors.green, bold = true },
+		AtlasIssueClosedChip        = { fg = colors.bg, bg = colors.purple, bold = true },
+		AtlasJiraKey                = { fg = colors.blue, bold = true },
+		AtlasJiraEpic               = { fg = colors.purple, bold = true },
+		AtlasJiraChipStoryPoints    = { fg = colors.bg, bg = colors.pink, bold = true },
+		AtlasJiraChipDueDate        = { fg = colors.bg, bg = colors.yellow, bold = true },
+		AtlasJiraChipParent         = { link = "AtlasJiraTheme" },
+
+		-- Pull requests
 		AtlasPROpen                 = { fg = colors.green, bold = true },
 		AtlasPRMerged               = { fg = colors.purple, bold = true },
 		AtlasPRDeclined             = { fg = colors.red, bold = true },
@@ -61,68 +66,59 @@ local function build(opts)
 		AtlasPROpenChip             = { fg = colors.bg, bg = colors.green, bold = true },
 		AtlasPRMergedChip           = { fg = colors.bg, bg = colors.purple, bold = true },
 		AtlasPRDeclinedChip         = { fg = colors.bg, bg = colors.red, bold = true },
-		AtlasPRDraftChip            = { fg = colors.bg, bg = colors.yellow, bold = true },
+		AtlasPRDraftChip            = { fg = colors.bg, bg = colors.comment, bold = true },
 
-		-- Pipelines
-		AtlasPipelineLinkSuccess    = { fg = colors.green },
-		AtlasPipelineLinkFailed     = { fg = colors.red },
-		AtlasPipelineLinkInProgress = { fg = colors.yellow },
-		AtlasPipelineLinkMuted      = { fg = colors.comment },
+		-- Logs
+		AtlasLogInfo                = { fg = colors.blue, bold = true },
+		AtlasLogWarn                = { fg = colors.yellow, bold = true },
+		AtlasLogError               = { fg = colors.red, bold = true },
+		AtlasLogErrorLine           = { link = "DiagnosticVirtualTextError" },
+		AtlasLogGroup               = { fg = colors.pink, bg = colors.cursorline, bold = true },
+		AtlasLogCommand             = { fg = colors.cyan },
+		AtlasLogDebug               = { fg = colors.comment },
 
-		-- Diffs
-		AtlasDiffAddLine            = { link = "DiffAdd" },
-		AtlasDiffRemoveLine         = { link = "DiffDelete" },
+		-- Footer
+		-- A group holding only `bg = "NONE"` counts as cleared, so atlas would
+		-- fill it with its own default; link to Normal to stay transparent.
+		AtlasFooterBackground       = float_bg == "NONE" and { link = "Normal" } or { bg = float_bg },
+		AtlasFooterText             = { fg = colors.comment, bg = float_bg },
+		AtlasFooterActive           = { fg = colors.fg, bg = float_bg, bold = true },
+		AtlasFooterInfo             = { fg = colors.blue, bg = float_bg, bold = true },
+		AtlasFooterNote             = { fg = colors.pink, bg = float_bg, bold = true },
+		AtlasFooterWarning          = { fg = colors.yellow, bg = float_bg, bold = true },
+		AtlasFooterError            = { fg = colors.red, bg = float_bg, bold = true },
+		AtlasFooterSuccess          = { fg = colors.green, bg = float_bg, bold = true },
 
-		-- Provider headers
-		AtlasGitHubTheme            = { fg = colors.bg, bg = colors.cyan, bold = true },
-		AtlasGitLabTheme            = { fg = colors.bg, bg = colors.orange, bold = true },
-		AtlasBitbucketTheme         = { fg = colors.bg, bg = colors.blue, bold = true },
-		AtlasJiraTheme              = { fg = colors.bg, bg = colors.blue, bold = true },
-		AtlasGHIssuesTheme          = { link = "AtlasGitHubTheme" },
-		AtlasGLIssuesTheme          = { link = "AtlasGitLabTheme" },
-
-		-- GitHub pull requests
-		AtlasGitHubPROpen           = { fg = colors.bg, bg = colors.green, bold = true },
-		AtlasGitHubPRMerged         = { fg = colors.bg, bg = colors.purple, bold = true },
-		AtlasGitHubPRClosed         = { fg = colors.bg, bg = colors.red, bold = true },
-		AtlasGitHubPRDraft          = { fg = colors.bg, bg = colors.comment, bold = true },
-
-		-- GitLab merge requests
-		AtlasGLPROpen               = { fg = colors.green, bold = true },
-		AtlasGLPRMerged             = { fg = colors.purple, bold = true },
-		AtlasGLPRClosed             = { fg = colors.red, bold = true },
-		AtlasGLPRDraft              = { fg = colors.comment, bold = true },
-		AtlasGLPRRef                = { fg = colors.orange, bold = true },
-
-		-- Bitbucket pull requests
-		AtlasBitbucketPROpen        = { fg = colors.bg, bg = colors.blue, bold = true },
-		AtlasBitbucketPRMerged      = { fg = colors.bg, bg = colors.green, bold = true },
-		AtlasBitbucketPRDeclined    = { fg = colors.bg, bg = colors.red, bold = true },
-		AtlasBitbucketPRDraft       = { fg = colors.bg, bg = colors.yellow, bold = true },
-
-		-- GitHub issues
-		AtlasGHIssueOpen            = { fg = colors.green, bold = true },
-		AtlasGHIssueClosed          = { fg = colors.purple, bold = true },
-		AtlasGHIssueOpenChip        = { fg = colors.bg, bg = colors.green, bold = true },
-		AtlasGHIssueClosedChip      = { fg = colors.bg, bg = colors.purple, bold = true },
-		AtlasGHIssueKey             = { fg = colors.cyan, bold = true },
-		AtlasGHIssueChipRepo        = { fg = colors.bg, bg = colors.cyan, bold = true },
-
-		-- GitLab issues
-		AtlasGLIssueOpen            = { fg = colors.green, bold = true },
-		AtlasGLIssueClosed          = { fg = colors.red, bold = true },
-		AtlasGLIssueOpenChip        = { fg = colors.bg, bg = colors.green, bold = true },
-		AtlasGLIssueClosedChip      = { fg = colors.bg, bg = colors.red, bold = true },
-		AtlasGLIssueKey             = { fg = colors.orange, bold = true },
-
-		-- Jira issues
-		AtlasJiraKey                = { fg = colors.blue, bold = true },
-		AtlasJiraTitle              = { fg = colors.pink, bold = true },
-		AtlasJiraEpic               = { fg = colors.purple, bold = true },
-		AtlasJiraChipStoryPoints    = { fg = colors.bg, bg = colors.pink, bold = true },
-		AtlasJiraChipDueDate        = { fg = colors.bg, bg = colors.yellow, bold = true },
-		AtlasJiraChipParent         = { fg = colors.bg, bg = colors.blue, bold = true },
-		AtlasProjectKey             = { fg = colors.purple, bold = true },
+		-- Markdown
+		AtlasMarkdownStrong         = { fg = colors.orange, bold = true },
+		AtlasMarkdownEmphasis       = { fg = colors.yellow, italic = true },
+		AtlasMarkdownStrike         = { fg = colors.comment, strikethrough = true },
+		AtlasMarkdownLink           = { fg = colors.cyan, underline = true },
+		AtlasMarkdownImage          = { fg = colors.comment },
+		AtlasMarkdownInlineCode     = { fg = colors.orange, bg = colors.bg_dark },
+		AtlasMarkdownComment        = { link = "Comment" },
+		AtlasMarkdownHeading1       = { fg = colors.pink, bold = true },
+		AtlasMarkdownHeading2       = { fg = colors.fg, bold = true },
+		AtlasMarkdownHeading3       = { fg = colors.yellow, bold = true },
+		AtlasMarkdownHeading4       = { fg = colors.green, bold = true },
+		AtlasMarkdownHeading5       = { fg = colors.orange, bold = true, italic = true },
+		AtlasMarkdownHeading6       = { fg = colors.purple, italic = true },
+		AtlasMarkdownList           = { fg = colors.purple, bold = true },
+		AtlasMarkdownTaskDone       = { fg = colors.green },
+		AtlasMarkdownTaskTodo       = { fg = colors.orange },
+		AtlasMarkdownQuote          = { fg = colors.comment, italic = true },
+		AtlasMarkdownQuoteBar       = { fg = colors.purple },
+		AtlasMarkdownRule           = { fg = colors.comment },
+		AtlasMarkdownCode           = { link = "AtlasCodeBackground" },
+		AtlasMarkdownCodeLabel      = { fg = colors.comment, italic = true },
+		AtlasMarkdownNote           = { fg = colors.blue, bold = true },
+		AtlasMarkdownTip            = { fg = colors.green, bold = true },
+		AtlasMarkdownImportant      = { fg = colors.purple, bold = true },
+		AtlasMarkdownWarning        = { fg = colors.yellow, bold = true },
+		AtlasMarkdownCaution        = { fg = colors.red, bold = true },
+		AtlasMarkdownTableHeader    = { fg = colors.pink, bold = true },
+		AtlasMarkdownTableRow       = { link = "AtlasCodeBackground" },
+		AtlasMarkdownTableBorder    = { fg = colors.blue },
 	}
 
 	for index, color in ipairs(dynamic) do
@@ -131,41 +127,6 @@ local function build(opts)
 	end
 
 	return groups
-end
-
--- atlas.nvim re-applies its own hardcoded highlights every time a view is
--- opened, without `default = true`, so the colorscheme has to claim them back
--- once the plugin is done drawing.
-local function reclaim(opts)
-	local augroup = vim.api.nvim_create_augroup("FluovibeAtlas", { clear = true })
-	local function apply()
-		for group, setting in pairs(build(opts)) do
-			vim.api.nvim_set_hl(0, group, setting)
-		end
-	end
-
-	vim.api.nvim_create_autocmd({ "FileType", "BufWinEnter" }, {
-		group = augroup,
-		callback = function(event)
-			if not vim.bo[event.buf].filetype:match("^atlas") then
-				return
-			end
-			vim.schedule(apply)
-		end,
-	})
-
-	vim.api.nvim_create_autocmd("User", {
-		group = augroup,
-		pattern = "Atlas*",
-		callback = function()
-			vim.schedule(apply)
-		end,
-	})
-end
-
-M.setup = function(opts)
-	reclaim(opts)
-	return build(opts)
 end
 
 return M
