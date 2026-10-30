@@ -29,6 +29,8 @@ M.setup = function(opts)
 
 		TelescopePromptCounter  = { link = "NonText" },
 		TelescopeMatching       = { link = "IncSearch" },
+		TelescopePreviewMatch   = { link = "Search" },
+		TelescopePreviewLine    = { link = "CursorLine" },
 		TelescopePromptPrefix   = { fg = colors.pink },
 	}
 end

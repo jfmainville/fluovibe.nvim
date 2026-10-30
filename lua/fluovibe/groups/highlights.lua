@@ -67,7 +67,7 @@ M.setup = function(opts)
 		PmenuThumb = { bg = colors.pink },
 		Question = { fg = colors.cyan, bold = true },
 		QuickFixLine = { bg = colors.selection },
-		Search = { link = "Visual" },
+		Search = { fg = colors.yellow, bg = "#5D6014", bold = true },
 		SpecialKey = { fg = colors.green, bold = true },
 		SpellBad = { fg = colors.diag_error, sp = colors.diag_error, underline = true },
 		SpellCap = { fg = colors.diag_hint, sp = colors.diag_hint, underline = true },
