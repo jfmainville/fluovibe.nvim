@@ -7,7 +7,7 @@ M.setup = function(opts)
 	local float_bg    = transparent and "NONE" or colors.bg_dark
 	local title_bg    = transparent and "NONE" or "#383C18"
 	return {
-		TelescopeSelection      = { link = "CursorLine" },
+		TelescopeSelection      = { fg = colors.cyan, bg = "#0E375D", bold = true },
 		TelescopeSelectionCaret = { fg = colors.pink },
 		TelescopeMultiSelection = { link = "Type" },
 		TelescopeMultiIcon      = { fg = colors.pink },
